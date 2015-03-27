@@ -27,6 +27,7 @@ A server with PHP running (tested on PHP 5.6.6). If building, you will need to h
    1. Modify the file `dist/partials/about.html` to show your information
    2. Add a file at `dist/images/headshot.jpg` with your headshot if you want one
    3. If your site is not at the root of your server, adjust the `<base href="/">` tag in `dist/index.html` as needed and make the `RewriteBase` match in `dist/.htaccess`
+   4. If you want to change colors, edit the file `dist/css/styles.css`
  2. Copy the files in the `dist` folder to your deployment location
 
 ## Usage
