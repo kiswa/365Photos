@@ -58,6 +58,9 @@ gulp.task('vendor', function() {
     gulp.src(mainFiles().ext('css').files)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest(dist + 'lib/'));
+
+    gulp.src(mainFiles().ext(['eot', 'woff', 'ttf', 'svg']).files)
+    .pipe(gulp.dest(dist + 'fonts/'));
 });
 
 gulp.task('minify', function() {
