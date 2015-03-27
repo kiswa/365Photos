@@ -4,6 +4,10 @@ An experiment in photography, to capture one photo each day for a year.
 
 This SPA (Single Page App) gives you a responsive, mobile-friendly, website to display photos. The intent is that it be used to post one photo a day for a year, but it does not enforce that, so use it how you like.
 
+## Requirements
+
+A server with PHP running (tested on PHP 5.6.6). If building, you will need to have [`nodejs`](https://nodejs.org/), [`bower`](http://bower.io/), and [`sass`](http://sass-lang.com/install) installed.
+
 ## Install
 
 ### Build from Source
