@@ -1,0 +1,19 @@
+.footer {
+    text-align: center;
+
+    @include media($mobile) {
+        @include span-columns(5);
+    }
+
+    @include media($tablet) {
+        @include span-columns(10);
+    }
+
+    @include media($desktop) {
+        @include span-columns(20);
+    }
+
+    span {
+        white-space: nowrap;
+    }
+}

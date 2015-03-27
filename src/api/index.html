@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>365 Photos API Docs</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        code {
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 0 5px;
+        }
+        li code:first-of-type,
+        dt code:first-of-type {
+            background-color: transparent;
+            display: inline-block;
+            width: 25%;
+        }
+        dl {
+            box-shadow: 0 1px 2px rgba(51,51,51,0.5);
+        }
+        dt {
+            background-color: #eee;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+        dd {
+            padding: 10px;
+            margin-bottom: 1em;
+        }
+        abbr {
+            border-bottom: 2px dotted;
+            cursor: help;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>365 Photos <abbr title="Application Program Interface">API</abbr> Documentation</h1>
+        <h2>Return Object</h2>
+        <p>All endpoints return a <abbr title="JavaScript Object Notation">JSON</abbr> object.</p>
+        <p>The return object is structured as follows:</p>
+        <ul>
+            <li><code>status</code> Either <code>error</code> or <code>success</code></li>
+            <li><code>message</code> Explanatory message to accompany the <code>status</code> (useful for alerts)</li>
+            <li><code>data</code> JSON array containing returned data (if any)</li>
+        </ul>
+        <p>Most GET endpoints return one or more <code>photo</code> objects in the <code>data</code> array, structured as follows:</p>
+            <ul>
+                <li><code>number</code> Number of the photo in order of addition to the database</li>
+                <li><code>thumb</code> Base64 encoded thumbnail image (200x200)</li>
+                <li><code>displayText</code> Short text describing the image</li>
+                <li><code>image</code> Base64 encoded image (max 1920x1080)</li>
+                <li><code>description</code> Detailed description for the image</li>
+            </ul>
+
+        <h2>Endpoints</h2>
+        <h3>GET</h3>
+        <dl>
+            <dt><code>/photos/count</code> Returns the total number of photos available.</dt>
+            <dd>Used for incremental loading of photos. Get total count, then get each thumbnail or full-size image.</dd>
+            <dt><code>/photos/:number/thumb</code> Returns a <code>photo</code> object.</dt>
+            <dd>
+            The returned photo object will have the <code>:number</code> requested, if valid.<br>
+            Only these properties will be loaded: <code>number</code>, <code>thumb</code>, and <code>displayText</code>
+            </dd>
+            <dt><code>/photos/:number/image</code> Returns a <code>photo</code> object.</dt>
+            <dd>
+            The returned photo object will have the <code>:number</code> requested, if valid.<br>
+            Only these properties will be loaded: <code>number</code>, <code>image</code>, and <code>description</code>
+            </dd>
+        </dl>
+        <h3>POST</h3>
+        <dl>
+            <dt><code>/admin/login</code> Requires an object.</dt>
+            <dd>The incoming object must have <code>username</code> and <code>password</code> properties.<br>
+            Returns a <abbr title="JSON Web Token">JWT</abbr></dd>
+            <dt><code>/admin/logout</code> Requires Authorization header containing JWT.</dt>
+            <dd>The incoming JWT is invalidated, logging out the user.</dd>
+            <dt><code>/admin/password</code> Requires an object and Authorization header containing JWT.</dt>
+            <dd>The incoming object must have <code>oldPass</code> and <code>newPass</code> properties.<br>
+            The return object has an empty <code>data</code> array, but contains a <code>message</code> if <code>status</code> is 'error'.</dd>
+            <dt><code>/admin/auth</code> Requires Authorization header containing JWT.</dt>
+            <dd>The incoming JWT is checked for authorization. If invalid, a <code>401</code> response is sent. This can be used by an app to reset stored tokens.
+            </dd>
+            <dt><code>/admin/image</code>  Requires an object and Authorization header containing JWT.</dt>
+            <dd>The incoming object must have these properties:
+            <ul>
+                <li><code>image</code> Base64 encoded image data</li>
+                <li><code>displayText</code> Short text describing the image</li>
+                <li><code>description</code> Detailed description for the image</li>
+            </ul>
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>

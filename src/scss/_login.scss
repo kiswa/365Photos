@@ -1,0 +1,22 @@
+.login {
+    box-shadow: 0 1px 3px 0 rgba(50, 50, 50, .4);
+
+    @include media($mobile) {
+        @include span-columns(3);
+        @include shift(1);
+    }
+
+    @include media($tablet) {
+        @include span-columns(6);
+        @include shift(2);
+    }
+
+    @include media($desktop) {
+        @include span-columns(8);
+        @include shift(6);
+    }
+
+    h2 {
+        margin: 10px;
+    }
+}

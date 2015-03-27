@@ -1,0 +1,129 @@
+body {
+    background-color: $white;
+    font: 16pt/18pt Lato;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Yanone Kaffeesatz';
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: $light-purple;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+fieldset {
+    border: 0;
+    text-align: center;
+
+    input,
+    textarea {
+        border: 1px solid $dark-purple;
+        outline-color: $light-purple;
+        width: 100%;
+
+        &:not(:first-of-type) {
+            border-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 10px;
+        }
+    }
+
+    textarea {
+        border: 1px solid $dark-purple;
+        outline-color: $light-purple;
+        width: 100%;
+    }
+}
+
+button {
+    background-color: $dark-purple;
+    border: 1px solid $light-black;
+    box-shadow: 0 1px 3px 0 rgba(50, 50, 50, .4);
+    color: $white;
+    display: block;
+    margin: 0 auto;
+    outline-color: $light-purple;
+    padding: .2em .4em;
+    width: 100%;
+
+    &:active {
+        background-color: $purple;
+    }
+
+    &:disabled {
+        background-color: lighten($purple, 20%);
+        border-color: lighten($light-black, 40%);
+    }
+}
+
+.error {
+    color: $error;
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.message {
+    color: $success;
+
+    p {
+        margin-top: 0;
+    }
+}
+
+.small {
+    font-size: 60%;
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    @include outer-container;
+
+    padding-left: 1em;
+    padding-right: 1em;
+
+    @include media($tablet) {
+        max-width: em(400);
+    }
+
+    @include media($mobile) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &.main {
+        margin-top: 110px;
+
+        @include media($tablet) {
+            margin-top: 140px;
+        }
+
+        @include media($mobile) {
+            margin-top: 140px;
+        }
+    }
+}

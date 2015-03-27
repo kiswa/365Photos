@@ -1,0 +1,16 @@
+@import 'neat-helpers';
+
+$grid-columns: 20;
+
+// $visual-grid: true;
+// $visual-grid-index: front;
+
+$max-width: em(860);
+
+$first-break: 480px;
+$second-break: 768px;
+
+$mobile: new-breakpoint(max-width em($first-break) 5);
+$tablet: new-breakpoint(min-width em($first-break +1) max-width em($second-break) 10);
+$desktop: new-breakpoint(min-width em($second-break + 1) 20);
+

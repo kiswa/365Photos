@@ -1,0 +1,11 @@
+<form class="login" data-ng-submit="loginForm.logIn()" novalidate>
+    <h2>Sign In</h2>
+    <fieldset>
+        <div class="error" data-ng-show="loginForm.errors.length">
+            <p data-ng-repeat="error in loginForm.errors">{{ error.message }}</p>
+        </div>
+        <input class="center" type="text" placeholder="Username" required autofocus data-ng-model="loginForm.username">
+        <input class="center" type="password" placeholder="Password" required data-ng-model="loginForm.password">
+        <button type="submit">Sign In</button>
+    </fieldset>
+</form>

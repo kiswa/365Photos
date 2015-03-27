@@ -1,0 +1,58 @@
+.day-photo {
+    background-color: $white;
+    box-shadow: 0 1px 3px 0 rgba(50, 50, 50, .4);
+    margin-top: 1em;
+    position: relative;
+
+    @include media($mobile) {
+        @include span-columns(3);
+        @include shift(1);
+        @include omega(1n);
+    }
+
+    @include media($tablet) {
+        @include span-columns(5);
+        @include omega(2n);
+    }
+
+    @include media($desktop) {
+        @include span-columns(4);
+        @include omega(5n);
+    }
+
+    .day-number {
+        background-color: $purple;
+        color: $white;
+        display: block;
+        padding: .1em .25em;
+        text-align: left;
+        width: 100%;
+    }
+
+    .loading {
+        background-color: lighten($light-black, 70%);
+        color: $white;
+        height: 2.5em;
+        left: 0;
+        padding-top: .6em;
+        position: absolute;
+        text-align: center;
+        top: 29px;
+        width: 100%;
+    }
+
+    img {
+        cursor: pointer;
+        height: auto;
+        position: relative;
+        width: 100%;
+    }
+
+    p {
+        display: table-cell;
+        font-size: 86%;
+        height: 3.1em;
+        padding: .3em;
+        vertical-align: bottom;
+    }
+}

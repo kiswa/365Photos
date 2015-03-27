@@ -1,0 +1,60 @@
+.nav {
+    @include span-columns(20);
+    background-color: $light-black;
+    box-shadow: 0 3px 8px 0 rgba(50, 50, 50, .4);
+    color: $white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+
+    @include media($mobile) {
+        text-align: center;
+    }
+
+    @include media($tablet) {
+        text-align: center;
+    }
+
+    span {
+        display: inline-block;
+        margin-top: .5em;
+        white-space: nowrap;
+    }
+
+    ul {
+        float: right;
+        margin-top: -2.3em;
+
+        @include media($mobile) {
+            margin-bottom: 0;
+            margin-top: -1.3em;
+            padding: .5em .8em;
+        }
+
+        @include media($tablet) {
+            margin-bottom: 0;
+            margin-top: -1.3em;
+            padding: .5em .8em;
+        }
+
+        li {
+            float: left;
+            margin-left: 1em;
+
+            @include media($mobile) {
+                margin-left: 0;
+                margin-right: 1em;
+            }
+
+            @include media($tablet) {
+                margin-left: 0;
+                margin-right: 1em;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
