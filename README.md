@@ -1,6 +1,6 @@
 # 365 Photos
 
-An expirement in photography, to capture one photo each day for a year.
+An experiment in photography, to capture one photo each day for a year.
 
 This SPA (Single Page App) gives you a responsive, mobile-friendly, website to display photos. The intent is that it be used to post one photo a day for a year, but it does not enforce that, so use it how you like.
 
