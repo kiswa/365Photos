@@ -5,6 +5,7 @@ An experiment in photography, to capture one photo each day for a year.
 This SPA (Single Page App) gives you a responsive, mobile-friendly, website to display photos. The intent is that it be used to post one photo a day for a year, but it does not enforce that, so use it how you like.
 
 See it in action at http://365photos.matthewross.me/
+![Demo Image](http://matthewross.me/images/365.png)
 
 ## Requirements
 
